@@ -1,0 +1,9 @@
+The game consists of a NUST logo that the student has to solve.
+
+INSTRUCTIONS
+
+Look at the completed NUST logo on your right, 
+rearange the scrumbled logo on your left to solve it.
+Once the logo is completed, a pop up will appear with a "Congratualions" text
+and some goals from NUST.
+NB: It is quite forward, It's like a normal Jigsaw Puzzle...Goodluck 

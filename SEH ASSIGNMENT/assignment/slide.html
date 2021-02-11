@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>SLIDE!!</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/logo.css" rel="stylesheet" />
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/logo.js"></script>
+</head>
+<body>
+    <div id="collage">
+        <h2>SEH Assignment</h2>
+        <hr />
+        <div id="playPanel" style="padding:5px;display:none;">
+            <h3 id="imgTitle"></h3> <hr />
+            <div style="display:inline-block; margin:auto; width:95%; vertical-align:top;">
+                <ul id="sortable" class="sortable"></ul>
+                <div id="actualImageBox">
+                    <div id="stepBox">
+                        <div>Count:</div><div class="stepCount">0</div>
+                    </div>
+                    <div id="timeBox">
+                        Time: <span id="timerPanel"></span> seconds
+                    </div>
+                    <img id="actualImage" />
+                    <div>Student, you should Solve the puzzle based on the image.</div>
+                    <p id="levelPanel">
+                        <input type="radio" name="level" id="easy" checked="checked" value="3" /> <label for="easy">Easy level</label>
+                        <input type="radio" name="level" id="medium" value="5" /> <label for="medium">Medium level</label>
+                        <input type="radio" name="level" id="hard" value="6" /> <label for="hard">Hard level</label>
+	
+                    </p>
+                    <div>
+                        <button id="btnRule" type="button" class="btn" onclick="rules();">Rules</button>
+                        <button id="newPhoto" type="button" class="btn">Next Picture</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="gameOver" style="display:none;">
+            <div style="background-color: #fc9e9e; padding: 5px 10px 20px 10px; text-align: center; ">
+                <h2 style="text-align:center">NUST GOAL & OBJECTIVE !!</h2>
+                <h2 style="text-align:center"><b>Building a vibrant and engaging learning environment</b>></h2>
+                Congratulations Student!! <br /> 
+                •	Develop a comprehensive marketing and recruitment strategy to attract highly talented and motivated staff and students from all over the world. <br />
+                •	Provide an innovative and responsive teaching and learning environment.<br />
+                •	Provide academic support structures facilitating student engagement, retention and graduation.<br />
+                •	Provide a modern, state-of-the-art and robust ICT infrastructure that supports 21st century pedagogy and the 4IR.<br />
+                Time: <span class="stepCount">0</span> gear.
+                <br />
+                Time: <span class="stepCount">0</span> gear.
+                <br />
+                Time spent: <span class="timeCount">0</span> seconds<br />
+                <div>
+                    <button type="button" onclick="window.location.reload(true);">Play more</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var images = [
+                { src: 'img/nust.png', title: 'NUST' },
+               
+            ];
+
+            $(function () {
+                var gridSize = $('#levelPanel :radio:checked').val();
+                imagePuzzle.startGame(images, gridSize);
+                $('#newPhoto').click(function () {
+                    var gridSize = $('#levelPanel :radio:checked').val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+
+                $('#levelPanel :radio').change(function (e) {
+                    var gridSize = $(this).val();
+                    imagePuzzle.startGame(images, gridSize);
+                });
+            });
+            function rules() {
+                alert('Students please arrange the pieces. \nThe steps taken are counted');
+            }
+        </script>
+    </div>
+</body>
+</html>
